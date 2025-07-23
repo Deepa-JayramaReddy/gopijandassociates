@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
   <head>
@@ -51,7 +53,7 @@ https://templatemo.com/tm-545-finance-business
           </div>
 			<div class="col-md-4">
 				<ul class="right-icons">
-					<li><a href="mailto:example@example.com"><i class="fa fa-envelope"></i> gopij252001@gmail.com</a></li>
+					<li><a href="mailto:example@example.com"><i class="fa fa-envelope"></i>cagopijayaram@gamil.com</a></li>
 					<li><a href="tel:+916383228436"><i class="fa fa-phone"></i> +91-6383228436</a></li>
 				</ul>
 			</div>
@@ -65,7 +67,7 @@ https://templatemo.com/tm-545-finance-business
       <nav class="navbar navbar-expand-lg">
 			<div class="container">
 			<a class="navbar-brand d-flex align-items-center" href="index.html">
-			<!--img src="assets/images/CA_Logo.png" alt="CA Logo" style="height:50px;" class="d-inline-block align-middle"--!>
+			<!--img src="assets/images/CA_Logo.png" alt="CA Logo" style="height:50px;" class="d-inline-block align-middle" > -->
 			<div class="ms-2">
 				<h2 class="mb-0 fs-5">Gopi J &amp; Associates</h2>
 				<span class="navbar-text text-white">Chartered Accountants</span>
@@ -172,7 +174,7 @@ https://templatemo.com/tm-545-finance-business
               <div class="down-content">
                 <h4>Taxation</h4>
                 <p>Professional assistance by Chartered Accountants and tax consultants to ensure legal compliance, optimize tax liabilities (including Income Tax, GST, TDS/TCS), manage filings, and resolve disputes for individuals and businesses.</p>
-                <a href="" class="filled-button">Read More</a>
+                <!--a href="" class="filled-button">Read More</a--!>
               </div>
             </div>
           </div>
@@ -181,8 +183,8 @@ https://templatemo.com/tm-545-finance-business
               <img src="assets/images/service_02.jpg" alt="">
               <div class="down-content">
                 <h4>GST Services</h4>
-                <p>We offer end-to-end GST solutions including professional registration, timely return filings, assessments & appeals support, strategic consulting, and comprehensive compliance services.</p>
-                <a href="" class="filled-button">Read More</a>
+                <p>We offer end-to-end GST solutions including professional registration, timely return filings, assessments & appeals support, strategic consulting, and comprehensive compliance services for small businesses and corporates </p>
+                <!--a href="" class="filled-button">Read More</a--!>
               </div>
             </div>
           </div>
@@ -192,7 +194,7 @@ https://templatemo.com/tm-545-finance-business
               <div class="down-content">
                 <h4>Auditing & Assurance</h4>
                 <p>We offer comprehensive Audit and Assurance services tailored to meet statutory and internal requirements of businesses across various sectors. Our services include Statutory Audit and Internal Audit</p>
-                <a href="" class="filled-button">Read More</a>
+                <!--a href="" class="filled-button">Read More</a--!>
               </div>
             </div>
           </div>
@@ -252,15 +254,15 @@ https://templatemo.com/tm-545-finance-business
               <div class="row">
                 <div class="col-md-6">
                   <div class="left-image">
-                    <img src="assets/images/more-info.jpg" alt="">
+                    <img src="assets/images/About_Our_Firm.png" alt="">
                   </div>
                 </div>
                 <div class="col-md-6 align-self-center">
                   <div class="right-content">
                     <span>About Us</span>
                     <h2><em>Get to know about our firm</em></h2>
-                    <p>Gopi J & Associates is a CA firm based in Bengaluru, providing exceptional financial and business advisory services. Our deep expertise spans accounting, taxation, and finance.<br><br>Founded by a group of passionate finance experts, Gopi J & Associates was established to simplify financial complexities for individuals and businesses, empowering them on their financial journeys.<br><br>Founded to address the growing complexities of finance and taxation, Gopi J & Associates started with a vision to guide individuals and businesses towards financial clarity and growth.</p>
-                    <a href="#" class="filled-button">Read More</a>
+                    <p>Gopi J & Associates is a CA firm based in Bengaluru, providing financial and business advisory services. Our deep expertise spans accounting, taxation, and finance. Our firm is established to simplify financial complexities for individuals and businesses, empowering them on their financial journeys.<br><br>Founded to address the growing complexities of finance and taxation, Gopi J & Associates started with a vision to guide individuals and businesses towards financial clarity and growth.</p>
+                    <!--a href="#" class="filled-button">Read More</a--!>
                   </div>
                 </div>
               </div>
@@ -335,8 +337,46 @@ https://templatemo.com/tm-545-finance-business
             </div>
           </div>
           <div class="col-md-12">
+		<script>
+const scriptURL = 'https://script.google.com/macros/s/AKfycbxkaGyHdK_2CgkL0WX3ztPPpteMgbNBEunXXAdlVVhcrMuc_cM7PyJPVam9rZCkpnEC/ex			ec';
+			
+			window.addEventListener('DOMContentLoaded', () => {
+			const form = document.querySelector("form#contact");
+			if (form) {
+				form.addEventListener('submit', e => {
+				e.preventDefault();
+			
+				const formData = new FormData(form);
+			
+				const payload = {
+					name: formData.get('name'),
+					email: formData.get('email'),
+					phone: formData.get('phone'),
+					message: formData.get('message')
+				};
+			
+				fetch(scriptURL, {
+					method: 'POST',
+					headers: {
+					'Content-Type': 'text/plain;charset=utf-8'  // This avoids CORS preflight
+					},
+					body: JSON.stringify(payload)
+				})
+				.then(response => response.text())
+				.then(data => {
+					alert("Message sent successfully!");
+					form.reset();
+				})
+				.catch(error => {
+					alert("Error sending message.");
+					console.error("Error!", error.message);
+				});
+				});
+			}
+			});
+			</script>
             <div class="contact-form">
-              <form id="contact" action="https://script.google.com/macros/s/AKfycbxkaGyHdK_2CgkL0WX3ztPPpteMgbNBEunXXAdlVVhcrMuc_cM7PyJPVam9rZCkpnEC/exec" method="post" onsubmit="submitToGoogle(event)">
+              <form id="contact" action=<form id="contact" action="" method="get">
                 <div class="row">
                   <div class="col-lg-4 col-md-12 col-sm-12">
                     <fieldset>
@@ -413,15 +453,16 @@ https://templatemo.com/tm-545-finance-business
 			  <li><a href="#"><i class="fa fa-twitter"></i></a></li--!>
               <li><a href="https://www.linkedin.com/in/ca-gopi-jayaram-8369bb25a/"><i class="fa fa-linkedin"></i></a></li>
 			  <li><a href="tel:+916383228436"><i class="fa fa-phone"></i></a></li>
-			  <li><a href="mailto:gopij252001@gmail.com"><i class="fa fa-envelope"></i></a></li>
+			  <li><a href="mailto:cagopijayaram@gmail.com"><i class="fa fa-envelope"></i></a></li>
 			  <li><a href="https://maps.app.goo.gl/VHUR6d1XYmiARxdR8"><i class="fa fa-map-marker"></i></a></li>
             </ul>
           </div>
 			<div class="col-md-3 footer-item">
 			<h4>Our Address</h4>
 			<ul class="menu-list">
-				<li>18/2a, 1st Floor, GRS Towers</li>
-				<li>Sarjapur Road, Bellandur</li>
+				<li>3rd Floor, GRS Towers</li>
+				<li>Above Meghana Foods</li>
+				<li>Bellandur - Sarjapur Road</li>
 				<li>Bangalore 560102</li>
 			</ul>
 			</div>
