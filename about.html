@@ -312,7 +312,44 @@ https://templatemo.com/tm-545-finance-business
           <div class="col-md-3 footer-item last-item">
             <h4>Contact Us</h4>
             <div class="contact-form">
-              <form id="contact footer-contact" action="" method="post">
+					<script>
+const scriptURL = 'https://script.google.com/macros/s/AKfycbxkaGyHdK_2CgkL0WX3ztPPpteMgbNBEunXXAdlVVhcrMuc_cM7PyJPVam9rZCkpnEC/ex			ec';
+			
+			window.addEventListener('DOMContentLoaded', () => {
+			const form = document.querySelector("form#contact");
+			if (form) {
+				form.addEventListener('submit', e => {
+				e.preventDefault();
+			
+				const formData = new FormData(form);
+			
+				const payload = {
+					name: formData.get('name'),
+					phone: formData.get('phone'),
+					message: formData.get('message')
+				};
+			
+				fetch(scriptURL, {
+					method: 'POST',
+					headers: {
+					'Content-Type': 'text/plain;charset=utf-8'  // This avoids CORS preflight
+					},
+					body: JSON.stringify(payload)
+				})
+				.then(response => response.text())
+				.then(data => {
+					alert("Message sent successfully!");
+					form.reset();
+				})
+				.catch(error => {
+					alert("Error sending message.");
+					console.error("Error!", error.message);
+				});
+				});
+			}
+			});
+			</script>
+              <form id="contact footer-contact" action="" method="get">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12">
                     <fieldset>
