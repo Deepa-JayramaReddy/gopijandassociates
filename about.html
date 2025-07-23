@@ -316,40 +316,39 @@ https://templatemo.com/tm-545-finance-business
 			const scriptURL = 'https://script.google.com/macros/s/AKfycbxkaGyHdK_2CgkL0WX3ztPPpteMgbNBEunXXAdlVVhcrMuc_cM7PyJPVam9rZCkpnEC/exec';
 			
 			window.addEventListener('DOMContentLoaded', () => {
-			const form = document.querySelector("form#contact");
+				const form = document.querySelector("form#contact");
 			
-			if (form) {
+				if (form) {
 				form.addEventListener('submit', e => {
-				e.preventDefault();
+					e.preventDefault();
 			
-				const formData = new FormData(form);
-				const payload = {
-					name: formData.get('name'),
-					email: formData.get('email'),
-					phone: formData.get('phone'),
-					message: formData.get('message')
-				};
+					const formData = new FormData(form);
 			
-				fetch(scriptURL, {
+					// If email is empty or not provided, set a default
+					const email = formData.get('email');
+					if (!email || email.trim() === '') {
+					formData.set('email', 'noemail@gmail.com'); // Use .set() instead of append to overwrite if needed
+					}
+			
+					fetch(scriptURL, {
 					method: 'POST',
 					body: formData
-				})
-				.then(response => {
+					})
+					.then(response => {
 					if (response.ok) {
-					alert("Message sent successfully!");
-					form.reset();
+						alert("Message sent successfully!");
+						form.reset();
 					} else {
-					throw new Error("Network response was not ok.");
+						throw new Error("Network response was not ok.");
 					}
-				})
-				.catch(error => {
+					})
+					.catch(error => {
 					alert("Error sending message.");
 					console.error("Error!", error.message);
+					});
 				});
-				});
-			}
+				}
 			});
-
 			</script>
               <form id="contact" class="footer-contact" action="" method="post">
                 <div class="row">
