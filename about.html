@@ -323,6 +323,12 @@ https://templatemo.com/tm-545-finance-business
 				e.preventDefault();
 			
 				const formData = new FormData(form);
+				const payload = {
+					name: formData.get('name'),
+					email: formData.get('email'),
+					phone: formData.get('phone'),
+					message: formData.get('message')
+				};
 			
 				fetch(scriptURL, {
 					method: 'POST',
