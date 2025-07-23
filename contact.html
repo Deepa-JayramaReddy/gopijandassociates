@@ -120,14 +120,14 @@ https://templatemo.com/tm-545-finance-business
               <i class="fa fa-envelope"></i>
               <h4>Email</h4>
               <p>Email us for inquiries, appointments, or detailed assistance.</p>
-              <a href="#">gopij252001@gmail.com</a>
+              <a href="#">cagopijayaram@gmail.com</a>
             </div>
           </div>
           <div class="col-md-4">
             <div class="contact-item">
               <i class="fa fa-map-marker"></i>
               <h4>Location</h4>
-              <p>18/2a, 3rd Floor, GRS Towers<br>Sarjapur Road, Bellandur<br>Bangalore 560102</p>
+              <p>3rd Floor, GRS Towers, Above Meghana Foods, Bellandur-Sarjapur Road<br>Bangalore 560102</p>
               <a href="https://maps.app.goo.gl/VHUR6d1XYmiARxdR8">View on Google Maps</a>
             </div>
           </div>
@@ -144,6 +144,41 @@ https://templatemo.com/tm-545-finance-business
             </div>
           </div>
           <div class="col-md-12">
+			<script>
+			const scriptURL = 'https://script.google.com/macros/s/AKfycbxkaGyHdK_2CgkL0WX3ztPPpteMgbNBEunXXAdlVVhcrMuc_cM7PyJPVam9rZCkpnEC/exec'; // Replace with your actual deployed URL
+			
+			window.addEventListener('DOMContentLoaded', () => {
+				const form = document.querySelector("form#contact");
+				if (form) {
+				form.addEventListener('submit', e => {
+					e.preventDefault();
+			
+					const data = {
+					name: document.getElementById("name").value,
+					email: document.getElementById("email").value,
+					phone: document.getElementById("phone").value,
+					message: document.getElementById("message").value
+					};
+			
+					fetch(scriptURL, {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify(data)
+					})
+					.then(response => {
+					alert("Message sent successfully!");
+					form.reset();
+					})
+					.catch(error => {
+					alert("Error sending message.");
+					console.error("Error!", error.message);
+					});
+				});
+				}
+			});
+			</script>
             <div class="contact-form">
               <form id="contact" action="" method="get">
                 <div class="row">
@@ -218,15 +253,16 @@ https://templatemo.com/tm-545-finance-business
 			  <li><a href="#"><i class="fa fa-twitter"></i></a></li--!>
               <li><a href="https://www.linkedin.com/in/ca-gopi-jayaram-8369bb25a/"><i class="fa fa-linkedin"></i></a></li>
 			  <li><a href="tel:+916383228436"><i class="fa fa-phone"></i></a></li>
-			  <li><a href="mailto:gopij252001@gmail.com"><i class="fa fa-envelope"></i></a></li>
+			  <li><a href="mailto:cagopijayaram@gmail.com"><i class="fa fa-envelope"></i></a></li>
 			  <li><a href="https://maps.app.goo.gl/VHUR6d1XYmiARxdR8"><i class="fa fa-map-marker"></i></a></li>
             </ul>
           </div>
 			<div class="col-md-3 footer-item">
 			<h4>Our Address</h4>
 			<ul class="menu-list">
-				<li>18/2a, 1st Floor, GRS Towers</li>
-				<li>Sarjapur Road, Bellandur</li>
+				<li>3rd Floor, GRS Towers</li>
+				<li>Above Meghana Foods</li>
+				<li>Bellandur - Sarjapur Road</li>
 				<li>Bangalore 560102</li>
 			</ul>
 			</div>
