@@ -312,34 +312,29 @@ https://templatemo.com/tm-545-finance-business
           <div class="col-md-3 footer-item last-item">
             <h4>Contact Us</h4>
             <div class="contact-form">
-					<script>
-const scriptURL = 'https://script.google.com/macros/s/AKfycbxkaGyHdK_2CgkL0WX3ztPPpteMgbNBEunXXAdlVVhcrMuc_cM7PyJPVam9rZCkpnEC/exec';
+			<script>
+			const scriptURL = 'https://script.google.com/macros/s/AKfycbxkaGyHdK_2CgkL0WX3ztPPpteMgbNBEunXXAdlVVhcrMuc_cM7PyJPVam9rZCkpnEC/exec';
 			
 			window.addEventListener('DOMContentLoaded', () => {
 			const form = document.querySelector("form#contact");
+			
 			if (form) {
 				form.addEventListener('submit', e => {
 				e.preventDefault();
 			
 				const formData = new FormData(form);
 			
-				const payload = {
-					name: formData.get('name'),
-					phone: formData.get('phone'),
-					message: formData.get('message')
-				};
-			
 				fetch(scriptURL, {
 					method: 'POST',
-					headers: {
-					'Content-Type': 'text/plain;charset=utf-8'  // This avoids CORS preflight
-					},
-					body: JSON.stringify(payload)
+					body: formData
 				})
-				.then(response => response.text())
-				.then(data => {
+				.then(response => {
+					if (response.ok) {
 					alert("Message sent successfully!");
 					form.reset();
+					} else {
+					throw new Error("Network response was not ok.");
+					}
 				})
 				.catch(error => {
 					alert("Error sending message.");
@@ -348,8 +343,9 @@ const scriptURL = 'https://script.google.com/macros/s/AKfycbxkaGyHdK_2CgkL0WX3zt
 				});
 			}
 			});
+
 			</script>
-              <form id="contact footer-contact" action="" method="get">
+              <form id="contact" class="footer-contact" action="" method="post">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12">
                     <fieldset>
