@@ -276,7 +276,7 @@ https://templatemo.com/tm-545-finance-business
     <footer>
       <div class="container">
         <div class="row">
-          <div class="col-md-3 footer-item">
+          <div class="col-md-4 footer-item">
             <h4>Gopi J & Associates</h4>
             <p>Gopi J & Associates is firm to help you in all your tax, audit and finance related needs</p>
             <ul class="social-icons">
@@ -290,7 +290,7 @@ https://templatemo.com/tm-545-finance-business
 			  <li><a href="https://maps.app.goo.gl/VHUR6d1XYmiARxdR8"><i class="fa fa-map-marker"></i></a></li>
             </ul>
           </div>
-			<div class="col-md-3 footer-item">
+			<div class="col-md-4 footer-item">
 			<h4>Our Address</h4>
 			<ul class="menu-list">
 				<li>3rd Floor, GRS Towers</li>
@@ -299,7 +299,7 @@ https://templatemo.com/tm-545-finance-business
 				<li>Bangalore 560102</li>
 			</ul>
 			</div>
-          <div class="col-md-3 footer-item">
+          <div class="col-md-4 footer-item">
             <h4>Additional Pages</h4>
             <ul class="menu-list">
 			  <li><a href="#">Home</a></li>
@@ -308,73 +308,6 @@ https://templatemo.com/tm-545-finance-business
               <li><a href="#">Quick Support</a></li>
               <li><a href="#">Contact Us</a></li>
             </ul>
-          </div>
-          <div class="col-md-3 footer-item last-item">
-            <h4>Contact Us</h4>
-            <div class="contact-form">
-			<script>
-			const scriptURL = 'https://script.google.com/macros/s/AKfycbxkaGyHdK_2CgkL0WX3ztPPpteMgbNBEunXXAdlVVhcrMuc_cM7PyJPVam9rZCkpnEC/exec';
-			
-			window.addEventListener('DOMContentLoaded', () => {
-				const form = document.querySelector("form#contact");
-			
-				if (form) {
-				form.addEventListener('submit', e => {
-					e.preventDefault();
-			
-					const formData = new FormData(form);
-			
-					// If email is empty or not provided, set a default
-					const email = formData.get('email');
-					if (!email || email.trim() === '') {
-					formData.set('email', 'noemail@gmail.com'); // Use .set() instead of append to overwrite if needed
-					}
-			
-					fetch(scriptURL, {
-					method: 'POST',
-					body: formData
-					})
-					.then(response => {
-					if (response.ok) {
-						alert("Message sent successfully!");
-						form.reset();
-					} else {
-						throw new Error("Network response was not ok.");
-					}
-					})
-					.catch(error => {
-					alert("Error sending message.");
-					console.error("Error!", error.message);
-					});
-				});
-				}
-			});
-			</script>
-              <form id="contact" class="footer-contact" action="" method="post">
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12">
-                    <fieldset>
-                      <input name="name" type="text" class="form-control" id="name" placeholder="Full Name" required="">
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-12 col-md-12 col-sm-12">
-                   <fieldset>
-                      <input name="phone" type="tel" class="form-control" id="phone"  pattern="[0-9]{10}" placeholder="Phone Number" required="">
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-12">
-                    <fieldset>
-                      <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your Message" required=""></textarea>
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-12">
-                    <fieldset>
-                      <button type="submit" id="form-submit" class="filled-button">Send Message</button>
-                    </fieldset>
-                  </div>
-                </div>
-              </form>
-            </div>
           </div>
         </div>
       </div>
