@@ -144,35 +144,42 @@ https://templatemo.com/tm-545-finance-business
             </div>
           </div>
           <div class="col-md-12">
-			<script>
-			const scriptURL = 'https://script.google.com/macros/s/AKfycbxkaGyHdK_2CgkL0WX3ztPPpteMgbNBEunXXAdlVVhcrMuc_cM7PyJPVam9rZCkpnEC/exec';
+						<script>
+const scriptURL = 'https://script.google.com/macros/s/AKfycbxkaGyHdK_2CgkL0WX3ztPPpteMgbNBEunXXAdlVVhcrMuc_cM7PyJPVam9rZCkpnEC/ex			ec';
 			
 			window.addEventListener('DOMContentLoaded', () => {
-				const form = document.querySelector("form#contact");
-				if (form) {
+			const form = document.querySelector("form#contact");
+			if (form) {
 				form.addEventListener('submit', e => {
-					e.preventDefault();
+				e.preventDefault();
 			
-					const formData = new FormData(form);
+				const formData = new FormData(form);
 			
-					fetch(scriptURL, {
+				const payload = {
+					name: formData.get('name'),
+					email: formData.get('email'),
+					phone: formData.get('phone'),
+					message: formData.get('message')
+				};
+			
+				fetch(scriptURL, {
 					method: 'POST',
-					body: formData
-					})
-					.then(response => {
-					if (response.ok) {
-						alert("Message sent successfully!");
-						form.reset();
-					} else {
-						throw new Error("Network response was not ok.");
-					}
-					})
-					.catch(error => {
+					headers: {
+					'Content-Type': 'text/plain;charset=utf-8'  // This avoids CORS preflight
+					},
+					body: JSON.stringify(payload)
+				})
+				.then(response => response.text())
+				.then(data => {
+					alert("Message sent successfully!");
+					form.reset();
+				})
+				.catch(error => {
 					alert("Error sending message.");
 					console.error("Error!", error.message);
-					});
 				});
-				}
+				});
+			}
 			});
 			</script>
             <div class="contact-form">
